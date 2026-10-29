@@ -1,61 +1,27 @@
-const STORAGE_KEY="urs_demo_requests_v3";
+const SIGNUP_KEY="urs_demo_email_signups_v1";
 
-function storageAvailable(){
-  try{
-    const t="__urs_test__";
-    localStorage.setItem(t,"1");
-    localStorage.removeItem(t);
-    return true;
-  }catch(e){ return false; }
-}
-const HAS_STORAGE=storageAvailable();
-let memoryRequests=[];
-
-function readRequests(){
-  if(HAS_STORAGE){
-    try{return JSON.parse(localStorage.getItem(STORAGE_KEY))||[]}
-    catch(e){}
+function saveSignup(email){
+  let signups=[];
+  try{signups=JSON.parse(localStorage.getItem(SIGNUP_KEY))||[]}catch(e){}
+  if(!signups.some(item=>item.email.toLowerCase()===email.toLowerCase())){
+    signups.unshift({email,createdAt:new Date().toISOString()});
   }
-  return memoryRequests;
+  try{localStorage.setItem(SIGNUP_KEY,JSON.stringify(signups))}catch(e){}
 }
-function writeRequests(items){
-  if(HAS_STORAGE){
-    try{localStorage.setItem(STORAGE_KEY,JSON.stringify(items));return}
-    catch(e){}
-  }
-  memoryRequests=items;
-}
-function makeId(){return "URS-"+Math.random().toString(36).slice(2,7).toUpperCase()}
 
-document.querySelectorAll(".service-select").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    document.getElementById("serviceSelect").value=btn.dataset.service||"";
-    document.getElementById("contact").scrollIntoView({behavior:"smooth"});
-  });
+const emailForm=document.getElementById("emailForm");
+emailForm.addEventListener("submit",event=>{
+  event.preventDefault();
+  const email=new FormData(emailForm).get("email").trim();
+  saveSignup(email);
+  emailForm.reset();
+  document.getElementById("signupSuccess").hidden=false;
 });
 
-document.getElementById("contactForm").addEventListener("submit",e=>{
-  e.preventDefault();
-  const fd=new FormData(e.currentTarget);
-  const row={
-    id:makeId(),
-    name:fd.get("name"),
-    phone:fd.get("phone"),
-    email:fd.get("email"),
-    contactMethod:fd.get("contactMethod"),
-    service:fd.get("service"),
-    urgency:fd.get("urgency"),
-    address:fd.get("address"),
-    message:fd.get("message"),
-    status:"New",
-    internalNotes:"",
-    createdAt:new Date().toISOString()
-  };
-  const items=readRequests();
-  items.unshift(row);
-  writeRequests(items);
-  e.currentTarget.reset();
-  const success=document.getElementById("formSuccess");
-  success.hidden=false;
-  success.scrollIntoView({behavior:"smooth",block:"nearest"});
+const menuButton=document.querySelector(".menu-btn");
+const navigation=document.querySelector(".site-header nav");
+menuButton.addEventListener("click",()=>{
+  const open=menuButton.getAttribute("aria-expanded")==="true";
+  menuButton.setAttribute("aria-expanded",String(!open));
+  navigation.style.display=open?"":"flex";
 });

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>URS Canada — Admin Operations Demo</title>
+  <title>Blue Ember — Admin Operations Demo</title>
   <link rel="stylesheet" href="assets/admin.css">
 </head>
 <body>
@@ -12,8 +12,8 @@
   <header class="admin-header">
     <div class="container admin-nav">
       <a class="admin-brand" href="index.html">
-        <span class="logo-box">URS</span>
-        <span><strong>URS Canada</strong><small>Admin Operations Demo</small></span>
+        <span class="logo-box">BE</span>
+        <span><strong>Blue Ember</strong><small>Admin Operations Demo</small></span>
       </a>
       <a href="index.html" class="back-link">← RETURN TO WEBSITE</a>
     </div>
@@ -40,19 +40,19 @@
           <p>Use the demo credentials below.</p>
 
           <label>Email
-            <input id="loginEmail" type="email" value="admin@ursdemo.ca" required>
+            <input id="loginEmail" type="email" value="admin@blueember.example" required>
           </label>
 
           <label>Password
-            <input id="loginPassword" type="password" value="URS-Demo-2026" required>
+            <input id="loginPassword" type="password" value="BlueEmber-Demo-2026" required>
           </label>
 
           <button id="signInButton" class="btn red full" type="submit">SIGN IN TO ADMIN</button>
 
           <div class="demo-creds">
             <strong>Demo Credentials</strong>
-            <code>admin@ursdemo.ca</code>
-            <code>URS-Demo-2026</code>
+            <code>admin@blueember.example</code>
+            <code>BlueEmber-Demo-2026</code>
           </div>
 
           <div id="loginError" class="error" hidden>Incorrect demo credentials.</div>
@@ -111,7 +111,7 @@
 
               <aside id="detailPanel" class="section-card detail-panel">
                 <div class="empty-state">
-                  <div class="empty-mark">URS</div>
+                  <div class="empty-mark">BE</div>
                   <h3>Select a customer request</h3>
                   <p>Review customer details, assign an employee and schedule a confirmed visit.</p>
                 </div>
@@ -218,10 +218,10 @@
   </main>
 
   <script>
-const KEY="urs_demo_requests_v4";
-const EMP_KEY="urs_demo_employees_v1";
-const EMAIL="admin@ursdemo.ca";
-const PASSWORD="URS-Demo-2026";
+const KEY="blue_ember_demo_requests_v1";
+const EMP_KEY="blue_ember_demo_employees_v1";
+const EMAIL="admin@blueember.example";
+const PASSWORD="BlueEmber-Demo-2026";
 
 const employeeSeed=[
   {id:"EMP-001",name:"Jordan Lee",role:"Project Manager",phone:"250-555-0201"},
@@ -237,15 +237,15 @@ function dateISO(daysFromNow,hour=9){
   return d.toISOString().slice(0,10);
 }
 const seed=[
-{id:"URS-A17QX",name:"Michael Chen",phone:"250-555-0198",email:"michael.chen@example.com",contactMethod:"Phone call",service:"Water Damage",urgency:"Emergency — immediate response",address:"Prince George, BC",message:"Supply line failed overnight. Water has reached the main floor and basement ceiling.",status:"Scheduled",internalNotes:"Emergency visit confirmed.",scheduledDate:dateISO(0),scheduledTime:"10:30",employeeId:"EMP-002",createdAt:new Date(Date.now()-18*60000).toISOString()},
-{id:"URS-K8L2P",name:"Sarah Thompson",phone:"250-555-0142",email:"sarah.t@example.com",contactMethod:"Email",service:"Mold Remediation",urgency:"Standard — within 1–2 business days",address:"Terrace, BC",message:"We found suspected mold behind drywall after a previous leak and would like an assessment.",status:"Contacted",internalNotes:"Left voicemail; follow-up email sent.",scheduledDate:"",scheduledTime:"",employeeId:"",createdAt:new Date(Date.now()-3.3*3600000).toISOString()},
-{id:"URS-H4M9C",name:"David Wilson",phone:"250-555-0116",email:"dwilson@example.com",contactMethod:"Phone call",service:"Fire / Smoke Damage",urgency:"Urgent — today",address:"Quesnel, BC",message:"Small kitchen fire is out. Need assessment for smoke and soot damage.",status:"Scheduled",internalNotes:"Assessment confirmed.",scheduledDate:dateISO(1),scheduledTime:"09:00",employeeId:"EMP-001",createdAt:new Date(Date.now()-22*3600000).toISOString()},
-{id:"URS-P3D8R",name:"Emily Fraser",phone:"250-555-0133",email:"emily.f@example.com",contactMethod:"Text message",service:"Asbestos Abatement",urgency:"Standard — within 1–2 business days",address:"Prince George, BC",message:"Renovation project requires an asbestos assessment before work continues.",status:"Scheduled",internalNotes:"Site visit confirmed.",scheduledDate:dateISO(3),scheduledTime:"13:30",employeeId:"EMP-004",createdAt:new Date(Date.now()-30*3600000).toISOString()}
+{id:"BE-A17QX",name:"Michael Chen",phone:"250-555-0198",email:"michael.chen@example.com",contactMethod:"Phone call",service:"Water Damage",urgency:"Emergency — immediate response",address:"North District",message:"Supply line failed overnight. Water has reached the main floor and basement ceiling.",status:"Scheduled",internalNotes:"Emergency visit confirmed.",scheduledDate:dateISO(0),scheduledTime:"10:30",employeeId:"EMP-002",createdAt:new Date(Date.now()-18*60000).toISOString()},
+{id:"BE-K8L2P",name:"Sarah Thompson",phone:"250-555-0142",email:"sarah.t@example.com",contactMethod:"Email",service:"Mold Remediation",urgency:"Standard — within 1–2 business days",address:"Lakeside",message:"We found suspected mold behind drywall after a previous leak and would like an assessment.",status:"Contacted",internalNotes:"Left voicemail; follow-up email sent.",scheduledDate:"",scheduledTime:"",employeeId:"",createdAt:new Date(Date.now()-3.3*3600000).toISOString()},
+{id:"BE-H4M9C",name:"David Wilson",phone:"250-555-0116",email:"dwilson@example.com",contactMethod:"Phone call",service:"Fire / Smoke Damage",urgency:"Urgent — today",address:"Riverbend",message:"Small kitchen fire is out. Need assessment for smoke and soot damage.",status:"Scheduled",internalNotes:"Assessment confirmed.",scheduledDate:dateISO(1),scheduledTime:"09:00",employeeId:"EMP-001",createdAt:new Date(Date.now()-22*3600000).toISOString()},
+{id:"BE-P3D8R",name:"Emily Fraser",phone:"250-555-0133",email:"emily.f@example.com",contactMethod:"Text message",service:"Asbestos Abatement",urgency:"Standard — within 1–2 business days",address:"Mountain View",message:"Renovation project requires an asbestos assessment before work continues.",status:"Scheduled",internalNotes:"Site visit confirmed.",scheduledDate:dateISO(3),scheduledTime:"13:30",employeeId:"EMP-004",createdAt:new Date(Date.now()-30*3600000).toISOString()}
 ];
 
 let memoryRequests=null;
 function clone(v){return JSON.parse(JSON.stringify(v))}
-function storageAvailable(){try{const t="__urs_test__";localStorage.setItem(t,"1");localStorage.removeItem(t);return true}catch(e){return false}}
+function storageAvailable(){try{const t="__blue_ember_test__";localStorage.setItem(t,"1");localStorage.removeItem(t);return true}catch(e){return false}}
 const HAS_STORAGE=storageAvailable();
 function read(){
   if(HAS_STORAGE){
@@ -264,7 +264,7 @@ function esc(v=""){return String(v).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt
 function ago(iso){const m=Math.floor((Date.now()-new Date(iso))/60000);if(m<60)return `${Math.max(1,m)}m ago`;const h=Math.floor(m/60);return h<24?`${h}h ago`:`${Math.floor(h/24)}d ago`}
 function fmtDate(v){if(!v)return "Not scheduled";return new Date(v+"T12:00:00").toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"})}
 function employeeName(id){const e=employees().find(e=>e.id===id);return e?e.name:"Unassigned"}
-function makeId(){return "URS-"+Math.random().toString(36).slice(2,7).toUpperCase()}
+function makeId(){return "BE-"+Math.random().toString(36).slice(2,7).toUpperCase()}
 
 let selected=null;
 let calendarCursor=new Date();
@@ -333,7 +333,7 @@ function renderRequests(items){
 }
 function renderDetail(items){
   const x=items.find(r=>r.id===selected),el=document.getElementById("detailPanel");
-  if(!x){el.innerHTML='<div class="empty-state"><div class="empty-mark">URS</div><h3>Select a customer request</h3><p>Review customer details, assign an employee and schedule a confirmed visit.</p></div>';return}
+  if(!x){el.innerHTML='<div class="empty-state"><div class="empty-mark">BE</div><h3>Select a customer request</h3><p>Review customer details, assign an employee and schedule a confirmed visit.</p></div>';return}
   const employeeOptions=employees().map(e=>`<option value="${e.id}" ${e.id===x.employeeId?"selected":""}>${esc(e.name)} — ${esc(e.role)}</option>`).join("");
   el.innerHTML=`
     <div class="detail">

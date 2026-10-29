@@ -38,7 +38,7 @@ The demo proves the customer-to-admin workflow. A production implementation woul
 - Requests/messages
 
 ## Phase 5 — Integrations
-After reviewing URS's current systems, integrate with appropriate:
+After reviewing a future client's systems, integrate with appropriate:
 - email;
 - calendar;
 - accounting;

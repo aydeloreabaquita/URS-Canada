@@ -51,7 +51,7 @@ Includes everything in Packages 1 and 2, plus:
 
 ## Optional Launch-Partner Credit
 
-A **CAD $100 credit** may be applied after successful project delivery if URS voluntarily:
+A **CAD $100 credit** may be applied after successful project delivery if the client voluntarily:
 
 - provides an honest review of the completed work; and
 - grants permission for the completed website/system to be featured in the developer's professional portfolio.

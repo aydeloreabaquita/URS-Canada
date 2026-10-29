@@ -1,11 +1,11 @@
-# URS Canada — Full Website + Admin Operations Demo
+# Blue Ember Property Recovery — Website + Admin Demo
 
-This repository is a self-contained client presentation demo for Universal Restoration Systems.
+This repository is a fictional, self-contained portfolio demonstration. Blue Ember Property Recovery is not an operating business.
 
 ## What the owner can see
 
 ### Public website
-- Red / black / white URS-branded concept
+- Navy / orange fictional Blue Ember concept
 - 24/7 emergency-response positioning
 - Restoration service cards
 - Strong emergency and contact calls-to-action
@@ -29,8 +29,8 @@ This repository is a self-contained client presentation demo for Universal Resto
 
 ## Demo login
 
-**Email:** `admin@ursdemo.ca`  
-**Password:** `URS-Demo-2026`
+**Email:** `admin@blueember.example`
+**Password:** `BlueEmber-Demo-2026`
 
 ## Best way to present it
 
@@ -67,7 +67,7 @@ A production version should use:
 ## Repository structure
 
 ```text
-urs-canada-full-demo/
+blue-ember-recovery-demo/
 ├── index.html
 ├── admin.html
 ├── README.md
@@ -78,7 +78,7 @@ urs-canada-full-demo/
     ├── admin.css
     ├── app.js
     ├── admin.js
-    └── hero-restoration.png
+    └── blue-ember-hero.png
 ```
 
 ## GitHub Pages

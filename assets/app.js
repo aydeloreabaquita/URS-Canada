@@ -1,4 +1,4 @@
-const SIGNUP_KEY="urs_demo_email_signups_v1";
+const SIGNUP_KEY="blue_ember_demo_email_signups_v1";
 
 function saveSignup(email){
   let signups=[];
